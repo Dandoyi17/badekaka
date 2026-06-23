@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badekaka</title>
+    <link rel="stylesheet" href="style/index.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="#" class="brand-link" aria-label="AgriGrow home">
+          <img id="headerLogo" src="images/growthtrans1.png" alt="AgriGrow Logo" class="logo" />
+        </a>
+         <nav class="nav-links" id="site-nav">
+          <a href="#">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#performance">Records</a>
+          <a href="#" class="services-link">Services <span class="dropdown-arrow">▼</span></a>
+          <a href="#footer">Contact Us</a>
+          <a href="faq.html">FAQs</a>
+          <a href="#" class="btn mobile-btn" style="color:white;">Get Started</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <a href="#" class="btn desktop-btn">Get Started</a>
+      </div>
+    </header>
+
+    <!-- Services Modal Popup -->
+    <div class="services-modal" id="servicesModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2>Our Services</h2>
+          <button class="modal-close" id="closeServicesModal" aria-label="Close services menu">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-content">
+          <a href="product.html" class="modal-item">Products</a>
+          <a href="investor/investor-dashboard.html" class="modal-item">Investor Portal</a>
+          <a href="farms.php" class="modal-item">Farms Adverts</a>
+          <a href="livestock.php" class="modal-item">Livestocks</a>
+          <a href="gallery.html" class="modal-item">Gallery</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Modal Popup -->
+    <div class="auth-modal" id="authModal">
+      <div class="auth-modal-overlay"></div>
+      <div class="auth-modal-container">
+        <button class="auth-modal-close" id="closeAuthModal" aria-label="Close auth modal">
+          <span>&times;</span>
+        </button>
+        <div class="auth-modal-content">
+          <!-- Login Form Container -->
+          <div class="auth-form-container active" id="loginFormContainer">
+            <div class="auth-header">
+              <h2>Welcome Back</h2>
+              <p>Login to your Badekaka account</p>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+              <div class="form-group">
+                <label for="login-username">Username or Email</label>
+                <input type="text" id="login-username" placeholder="Enter your username or email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+              </div>
+
+              <div class="form-group checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me" class="checkbox-label">Remember me</label>
+              </div>
+
+              <button type="submit" class="auth-btn">Login</button>
+            </form>
+
+            <div class="auth-divider">
+              <span>or continue with</span>
+            </div>
+
+            <div class="social-logins">
+              <button class="social-btn google-btn" data-provider="google">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Google
+              </button>
+              <button class="social-btn email-btn" data-provider="email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Email
+              </button>
+            </div>
+
+            <div class="auth-footer">
+              <p>Don't have an account? <button type="button" class="link-btn" id="switchToRegister">Register here</button></p>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+          </div>
+
+          <!-- Register Form Container -->
+          <div class="auth-form-container" id="registerFormContainer">
+            <div class="auth-header">
+              <h2>Create Account</h2>
+              <p>Join the Badekaka community today</p>
+            </div>
+
+            <form class="auth-form" id="registerForm">
+              <div class="form-group">
+                <label for="register-name">Full Name</label>
+                <input type="text" id="register-name" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="register-email">Email Address</label>
+                <input type="email" id="register-email" placeholder="Enter your email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" placeholder="Choose a username" required>
+              </div>
+
+              <div class="form-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" placeholder="Create a strong password" required>
+              </div>
+
+              <div class="form-group">
+                <label for="register-confirm">Confirm Password</label>
+                <input type="password" id="register-confirm" placeholder="Confirm your password" required>
+              </div>
+
+              <div class="form-group checkbox">
+                <input type="checkbox" id="agree-terms" required>
+                <label for="agree-terms" class="checkbox-label">I agree to the Terms of Service and Privacy Policy</label>
+              </div>
+
+              <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+
+            <div class="auth-divider">
+              <span>or sign up with</span>
+            </div>
+
+            <div class="social-logins">
+              <button class="social-btn google-btn" data-provider="google">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Google
+              </button>
+              <button class="social-btn email-btn" data-provider="email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Email
+              </button>
+            </div>
+
+            <div class="auth-footer">
+              <p>Already have an account? <button type="button" class="link-btn" id="switchToLogin">Login here</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <section class="first-section" id="home">
+      <div class="carousel" aria-label="Featured agricultural slides">
+        <img src="images/carousel/growth.png" alt="Agricultural growth scene" class="carousel-image active" />
+        <img src="images/carousel/joint.png" alt="Farm partnership scene" class="carousel-image" />
+        <img src="images/carousel/jointy.png" alt="Agricultural teamwork" class="carousel-image" />
+        <img src="images/carousel/woman.png" alt="Farmer working in the field" class="carousel-image" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-logo-switch" aria-hidden="true">
+          <img src="images/whitetransb.png" alt="" class="hero-logo logo-light active" />
+          <img src="images/blacktransb.png" alt="" class="hero-logo logo-dark" />
+          <img src="images/logotransperent1.png" alt="" class="hero-logo logo-dark" />
+        </div>
+        <h1>Growing Prosperity Through Agricultural Partnerships</h1>
+        <p>Empowering farmers. Rewarding investors. Strengthening food security.</p>
+        <a href="register.html" class="btn">Learn More</a>
+      </div>
+    </section>
+
+
+
+
+    <section class="second-section" id="about">
+      <img src="images/partwty.png" alt="Decorative agricultural background" class="section-bg-image" />
+      <div class="container">
+        <div class="story-tabs" role="tablist" aria-label="About and story sections">
+          <button class="tab-btn active" data-target="about-panel" role="tab" aria-selected="true">About Us</button>
+          <button class="tab-btn" data-target="story-panel" role="tab" aria-selected="false">Our Story</button>
+        </div>
+
+        <div class="story-panel active" id="about-panel" role="tabpanel">
+          <div class="story-media">
+            <img src="images/about-us.jpeg" alt="About Us" class="story-image" />
+          </div>
+          <div class="story-content">
+            <h2>About Us</h2>
+            <p>
+              At Badekaka, our mission is to revolutionize agriculture by fostering
+              strong partnerships between farmers and investors. We are committed to
+              empowering farmers with the resources and support they need to thrive,
+              while providing investors with rewarding opportunities to contribute to
+              sustainable food production and rural development.
+            </p>
+            <p>
+              Badekaka is an innovative agricultural investment platform that connects farmers with investors through a produce-backed farming model. Our mission is to provide farmers with the resources they need to expand production while offering investors an opportunity to participate in agriculture and benefit from the value created during harvest.
+            </p>
+            <p>
+              For more than three years, Badekaka has successfully supported farmers and profited investors through a transparent and sustainable agricultural partnership system.
+            </p>
+          </div>
+        </div>
+
+        <div class="story-panel" id="story-panel" role="tabpanel">
+            <div class="story-media">
+            <img src="images/impact.jpeg" alt="Our Story" class="story-image" />
+          </div>
+          <div class="story-content">
+            <h2>Our Story</h2>
+            <p>
+              Badekaka was founded on a simple idea: many hardworking farmers possess fertile lands, farming knowledge, and the willingness to work, but lack the sufficient financial resources are needed to maximize production.
+            </p>
+            <p>
+              Badekaka was born out of a passion for agriculture and a desire to create a more equitable and sustainable food system. We recognized the challenges faced by farmers in accessing capital and resources, and the untapped potential for investors to make a positive impact.
+            </p>
+            <p>
+              Our platform connects these two groups, enabling them to work together towards a common goal of growing prosperity through agriculture.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="third-section" id="how">
+      <img src="images/jointy.png" alt="Agricultural background" class="third-section-bg" />
+      <div class="third-section-overlay"></div>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How It Works</p>
+          <h2>From seed to harvest, every step is designed for shared success.</h2>
+        </div>
+
+        <div class="work-carousel">
+          <div class="work-step active" data-step="1">
+            <div class="work-content">
+              <span class="step-number">01</span>
+              <h3>Farmer Requests Agricultural Support</h3>
+              <p>A farmer applies for support to cultivate crops such as rice and submits details of the farming project.</p>
+            </div>
+            <div class="work-media">
+              <img src="images/mixed.png" alt="Farmer requesting agricultural support" />
+            </div>
+          </div>
+
+          <div class="work-step" data-step="2">
+            <div class="work-content">
+              <span class="step-number">02</span>
+              <h3>Investor Provides Funding</h3>
+              <p>Investors fund the equivalent value of agricultural produce before the planting season.</p>
+              <ul>
+                <li>One bag of rice is valued at ₦30,000</li>
+                <li>A farmer requires support equivalent to 5 bags of rice</li>
+                <li>The investor provides ₦150,000 for farm operations</li>
+              </ul>
+            </div>
+            <div class="work-media">
+              <img src="images/investor.png" alt="Investor providing funding for agriculture" />
+            </div>
+          </div>
+
+          <div class="work-step" data-step="3">
+            <div class="work-content">
+              <span class="step-number">03</span>
+              <h3>Cultivation and Monitoring</h3>
+              <p>The farmer uses the funds for land preparation, seeds, fertilizers, labor, and farm management throughout the season.</p>
+            </div>
+            <div class="work-media">
+              <img src="images/farmer.png" alt="Farm cultivation and monitoring in progress" />
+            </div>
+          </div>
+
+          <div class="work-step" data-step="4">
+            <div class="work-content">
+              <span class="step-number">04</span>
+              <h3>Harvest and Produce Repayment</h3>
+              <p>At harvest, the farmer returns the agreed quantity of produce to the investor.</p>
+              <ul>
+                <li>Farmer receives ₦150,000 in funding</li>
+                <li>Farmer agrees to return 5 bags of rice after harvest</li>
+                <li>Farmer retains the remaining harvest for personal profit and business growth</li>
+              </ul>
+            </div>
+            <div class="work-media">
+              <img src="images/20.jpeg" alt="Harvest and produce repayment celebration" />
+            </div>
+          </div>
+
+          <div class="carousel-dots">
+            <button class="dot active" data-step="1" aria-label="Step 1"></button>
+            <button class="dot" data-step="2" aria-label="Step 2"></button>
+            <button class="dot" data-step="3" aria-label="Step 3"></button>
+            <button class="dot" data-step="4" aria-label="Step 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="fourth-section" id="why">
+      <img src="images/partblky.png" alt="Decorative agricultural background" class="section-bg-image" />
+      <div class="fourth-section-overlay"></div>
+      
+      <div class="container fourth-container">
+        <div class="section-header">
+          <p class="eyebrow-fourth">Why Our Model Works</p>
+          <h2 style="color:#223126;">Transforming Agriculture Together</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card farmers-card">
+            <div class="card-header">
+              <div class="icon-box">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="30" r="15" fill="currentColor" opacity="0.8"/>
+                  <path d="M 50 50 Q 30 65 20 85 L 80 85 Q 70 65 50 50 Z" fill="currentColor" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3>Benefits for Farmers</h3>
+            </div>
+            <ul class="benefits-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Access to agricultural funding without traditional bank loans</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Opportunity to increase farm productivity</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Flexible produce-based repayment</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Ability to expand farming operations</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="benefit-card investors-card">
+            <div class="card-header">
+              <div class="icon-box">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 50 20 L 70 35 L 70 75 Q 50 85 30 75 L 30 35 Z" fill="currentColor" opacity="0.8"/>
+                  <circle cx="50" cy="55" r="12" fill="none" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3>Benefits for Investors</h3>
+            </div>
+            <ul class="benefits-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Direct participation in agricultural production</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Ownership of agricultural produce after harvest</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Opportunity to benefit from increases in commodity prices</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Support local food production and rural communities</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="fifth-section" id="performance">
+      <img src="images/logowhitebg.png" alt="Background pattern" class="section-bg-image" />
+      <div class="fifth-section-overlay"></div>
+      
+      <div class="container fifth-container">
+        <div class="section-header-fifth">
+          <p class="eyebrow-fifth">Our Track Record</p>
+          <h2>Performance & Success Metrics</h2>
+          <p class="section-intro">Three years of proven results demonstrating the strength of our agricultural investment model</p>
+        </div>
+
+        <div class="performance-tabs">
+          <button class="tab-button active" data-tab="insights">Key Insights</button>
+          <button class="tab-button" data-tab="charts">Visual Analytics</button>
+        </div>
+
+        <!-- Tab 1: Key Insights -->
+        <div class="tab-content active" id="insights-tab">
+          <div class="insights-grid">
+            <div class="insight-card animate-in">
+              <div class="insight-icon">📊</div>
+              <h3>2023 Pilot Season</h3>
+              <div class="stat-highlight">175% ROI</div>
+              <ul class="insight-list">
+                <li><strong>Investment:</strong> 6 bags @ ₦20,000 = ₦120,000</li>
+                <li><strong>Harvest Recovery:</strong> ₦55,000/bag = ₦330,000</li>
+                <li><strong>Profit:</strong> ₦210,000</li>
+                <li><strong>Farmers:</strong> 2</li>
+                <li><strong>Investors:</strong> 2</li>
+                <li><strong>Success Rate:</strong> 100%</li>
+              </ul>
+            </div>
+
+            <div class="insight-card animate-in">
+              <div class="insight-icon">📈</div>
+              <h3>2024 Growth Season</h3>
+              <div class="stat-highlight">227% ROI</div>
+              <ul class="insight-list">
+                <li><strong>Investment:</strong> 25 bags @ ₦30,000 = ₦750,000</li>
+                <li><strong>Harvest Recovery:</strong> ₦98,000/bag = ₦2,450,000</li>
+                <li><strong>Profit:</strong> ₦1,700,000</li>
+                <li><strong>Farmers:</strong> 8</li>
+                <li><strong>Investors:</strong> 11</li>
+                <li><strong>Success Rate:</strong> 92% (23/25 bags)</li>
+              </ul>
+            </div>
+
+            <div class="insight-card animate-in">
+              <div class="insight-icon">🌾</div>
+              <h3>2025 Scale Season</h3>
+              <div class="stat-highlight">67% ROI</div>
+              <ul class="insight-list">
+                <li><strong>Investment:</strong> 150 bags @ ₦30,000 = ₦4,500,000</li>
+                <li><strong>Harvest Recovery:</strong> ₦50,000/bag = ₦7,500,000</li>
+                <li><strong>Profit:</strong> ₦3,000,000</li>
+                <li><strong>Farmers:</strong> 35-40</li>
+                <li><strong>Investors:</strong> 22</li>
+                <li><strong>Success Rate:</strong> 96.7% (145/150 bags)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="summary-box">
+            <h3>Cumulative Results (2023-2025)</h3>
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <span class="stat-value">181 Bags</span>
+                <span class="stat-label">Total Invested</span>
+              </div>
+              <div class="summary-stat">
+                <span class="stat-value">173 Bags</span>
+                <span class="stat-label">Recovered</span>
+              </div>
+              <div class="summary-stat">
+                <span class="stat-value">95.6%</span>
+                <span class="stat-label">Overall Success Rate</span>
+              </div>
+              <div class="summary-stat">
+                <span class="stat-value">₦4,910,000</span>
+                <span class="stat-label">Total Profit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Visual Analytics -->
+        <div class="tab-content" id="charts-tab">
+          <div class="charts-container">
+            <div class="chart-wrapper">
+              <h3>Investment vs Harvest Value by Season</h3>
+              <canvas id="investmentChart"></canvas>
+            </div>
+
+            <div class="chart-wrapper">
+              <h3>Profit Margin Progression</h3>
+              <canvas id="profitChart"></canvas>
+            </div>
+
+            <div class="chart-wrapper">
+              <h3>Recovery Success Rate</h3>
+              <canvas id="successChart"></canvas>
+            </div>
+
+            <div class="chart-wrapper">
+              <h3>Total Investment Distribution</h3>
+              <canvas id="distributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="sixth-section" id="values">
+      <!-- Background Carousel -->
+      <div class="carousel-background">
+        <img src="images/carousel/growth.png" alt="Agricultural carousel" class="carousel-slide active">
+        <img src="images/carousel/growthtrans.png" alt="Agricultural carousel" class="carousel-slide">
+        <img src="images/carousel/joint.png" alt="Agricultural carousel" class="carousel-slide">
+        <img src="images/carousel/jointy.png" alt="Agricultural carousel" class="carousel-slide">
+        <img src="images/carousel/woman.png" alt="Agricultural carousel" class="carousel-slide">
+      </div>
+      
+      <!-- Overlay -->
+      <div class="sixth-section-overlay"></div>
+      
+      <!-- Content Container -->
+      <div class="container sixth-container">
+        <div class="section-header-sixth">
+          <h2>Our Values & Mission</h2>
+          <p>Understanding what drives Badekaka</p>
+        </div>
+
+        <!-- Grid Container for all panels -->
+        <div class="content-grid">
+          
+          <!-- Vision Card -->
+          <div class="content-card" id="vision-card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Our Vision</h3>
+            <p class="card-text">
+              To become Africa's leading produce-backed agricultural investment platform, empowering farmers and creating sustainable opportunities.
+            </p>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="content-card" id="mission-card">
+            <div class="card-icon">💼</div>
+            <h3 class="card-title">Our Mission</h3>
+            <p class="card-text">
+              To provide accessible agricultural financing, strengthen rural economies, and build a trusted ecosystem where farmers and investors prosper.
+            </p>
+          </div>
+
+          <!-- Transparency Card -->
+          <div class="content-card" id="transparency-card">
+            <div class="card-icon">✓</div>
+            <h3 class="card-title">Transparency</h3>
+            <p class="card-text">
+              We work only with verified farmers through rigorous assessment of farm location, identity, production capacity, and historical performance.
+            </p>
+          </div>
+
+          <!-- Community Card -->
+          <div class="content-card" id="community-card">
+            <div class="card-icon">🤝</div>
+            <h3 class="card-title">Join Us</h3>
+            <p class="card-text">
+              Whether farmer or investor, Badekaka offers a transparent way to create value through farming and grow food, create wealth together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<footer class="footer" id="footer">
+        <!-- Background Image -->
+        <div class="footer-background">
+            <img src="images/whitetransb.png" alt="Footer background" class="footer-bg-image">
+        </div>
+        
+        <!-- Green Overlay -->
+        <div class="footer-overlay"></div>
+        
+        <div class="footer-top">
+            <div class="container footer-main">
+                <!-- Logo and Slogan Section -->
+                <div class="footer-logo-section">
+                    <img src="images/logotransperent1.png" alt="Badekaka Logo" class="footer-logo">
+                    <div class="footer-slogan">
+                        <h3>Our Commitment</h3>
+                        <p>At Badekaka, we work to achieve a simple agricultural success regardless of your gender. We are open to all with potentials to eradicate poverty and enhance the livelihood of local farmers.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-links-section">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Badekaka</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#investment">Investment Opportunities</a>
+                        <a href="#farmer-reg">Farmer Registration</a>
+                        <a href="#investor-reg">Investor Registration</a>
+                        <a href="#performance">Performance & Harvest Reports</a>
+                        <a href="#success">Success Stories</a>
+                        <a href="#faq">FAQ</a>
+                    </nav>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:info@badekaka.com">info@badekaka.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone:</span>
+                        <a href="tel:+2347047440709">+234 704 744 0709</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Mobile:</span>
+                        <a href="tel:+2348134581212">+234 813 458 1212</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="footer-newsletter-section">
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get updates on farming opportunities and investment insights</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email" 
+                            required 
+                            class="newsletter-input"
+                        >
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Badekaka. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                    <div class="footer-social">
+                        <span>Follow us:</span>
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services - Badekaka</title>
+    <link rel="stylesheet" href="style/index.css">
+    <style>
+        .products-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.05), rgba(102, 187, 106, 0.05));
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h1 {
+            font-size: 40px;
+            color: #223126;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .product-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: #2e7d32;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            color: #223126;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .product-features li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .product-features li:before {
+            content: "✓ ";
+            color: #2e7d32;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .product-cta {
+            margin-top: auto;
+        }
+
+        .product-cta button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-cta button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Services Section */
+        .services-section {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #f8fdf7;
+            border-left: 4px solid #2e7d32;
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: linear-gradient(135deg, #f0f7f4, #ffffff);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 18px;
+            color: #223126;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .service-list li {
+            padding: 5px 0;
+            margin-left: 20px;
+        }
+
+        .service-list li:before {
+            content: "→ ";
+            color: #2e7d32;
+            font-weight: bold;
+            margin-left: -15px;
+            margin-right: 8px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.08), rgba(102, 187, 106, 0.08));
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-table thead {
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            color: white;
+        }
+
+        .pricing-table th {
+            padding: 20px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .pricing-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: #f9fdf8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .cta-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .cta-btn-primary {
+            background: white;
+            color: #2e7d32;
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn-secondary:hover {
+            background: white;
+            color: #2e7d32;
+        }
+
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 28px;
+            }
+
+            .section-header p {
+                font-size: 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-section,
+            .services-section,
+            .pricing-section,
+            .cta-section {
+                padding: 40px 15px;
+            }
+
+            .section-header h1 {
+                font-size: 22px;
+            }
+
+            .product-card {
+                margin: 0;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand-link">
+                <img src="images/growthtrans1.png" alt="Badekaka Logo" class="logo" />
+            </a>
+            <nav class="nav-links" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="index.html#footer">Contact Us</a>
+                <a href="faq.html">FAQs</a>
+                <a href="#" class="btn mobile-btn" style="color:white;">Get Started</a>
+            </nav>
+            <button class="menu-toggle" type="button" aria-label="Open menu">
+                <span class="menu-icon"><span></span><span></span><span></span></span>
+            </button>
+            <a href="#" class="btn desktop-btn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="products-container">
+            <div class="section-header">
+                <h1>Our Products</h1>
+                <p>Comprehensive agricultural investment solutions designed to help farmers and investors grow together</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">🌾</div>
+                    <div class="product-content">
+                        <div class="product-category">Investment Platform</div>
+                        <h3 class="product-title">Direct Farm Funding</h3>
+                        <p class="product-description">Connect directly with verified farmers and invest in specific agricultural projects with transparent returns.</p>
+                        <ul class="product-features">
+                            <li>Verified farmer partners</li>
+                            <li>Transparent ROI tracking</li>
+                            <li>3-12 month durations</li>
+                            <li>Minimal fees</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to investment portal...')">Explore Investments</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">💼</div>
+                    <div class="product-content">
+                        <div class="product-category">Portfolio Management</div>
+                        <h3 class="product-title">Diversified Investment Portfolio</h3>
+                        <p class="product-description">Build a diverse portfolio across different crops, regions, and farmers to maximize returns and minimize risk.</p>
+                        <ul class="product-features">
+                            <li>Multi-crop diversification</li>
+                            <li>Risk management tools</li>
+                            <li>Performance analytics</li>
+                            <li>Automated tracking</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to portfolio section...')">View Portfolio Tools</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">📊</div>
+                    <div class="product-content">
+                        <div class="product-category">Analytics & Insights</div>
+                        <h3 class="product-title">Real-Time Market Data</h3>
+                        <p class="product-description">Access real-time market prices, crop trends, and farmer performance data to make informed investment decisions.</p>
+                        <ul class="product-features">
+                            <li>Live market prices</li>
+                            <li>Crop yield data</li>
+                            <li>Farmer analytics</li>
+                            <li>Trend predictions</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to analytics dashboard...')">Access Analytics</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">💰</div>
+                    <div class="product-content">
+                        <div class="product-category">Financial Services</div>
+                        <h3 class="product-title">Flexible Payment Options</h3>
+                        <p class="product-description">Multiple payment methods including bank transfers, mobile money, and digital wallets for seamless transactions.</p>
+                        <ul class="product-features">
+                            <li>Multiple payment methods</li>
+                            <li>Secure transactions</li>
+                            <li>Quick disbursements</li>
+                            <li>Automated returns</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to payment setup...')">Set Up Payments</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">🔒</div>
+                    <div class="product-content">
+                        <div class="product-category">Security & Support</div>
+                        <h3 class="product-title">Verified & Secure Platform</h3>
+                        <p class="product-description">Bank-grade security, verified partners, legal documentation, and dedicated customer support for peace of mind.</p>
+                        <ul class="product-features">
+                            <li>SSL encryption</li>
+                            <li>Legal contracts</li>
+                            <li>24/7 support</li>
+                            <li>Insurance coverage</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to security info...')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">🌱</div>
+                    <div class="product-content">
+                        <div class="product-category">Farmer Support</div>
+                        <h3 class="product-title">Farmer Marketplace</h3>
+                        <p class="product-description">Enable farmers to list their projects, get funded quickly, and receive advisory services to ensure success.</p>
+                        <ul class="product-features">
+                            <li>Easy project listing</li>
+                            <li>Quick funding access</li>
+                            <li>Expert advisory</li>
+                            <li>Guaranteed market</li>
+                        </ul>
+                        <div class="product-cta">
+                            <button onclick="alert('Redirecting to farmer portal...')">For Farmers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-header" style="margin-bottom: 40px;">
+            <h1>Our Services</h1>
+            <p>Comprehensive support services to ensure your investment success</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3 class="service-title">Investment Advisory</h3>
+                <p class="service-description">Expert guidance on choosing the right agricultural investments based on your goals and risk profile.</p>
+                <ul class="service-list">
+                    <li>Portfolio assessment</li>
+                    <li>Risk analysis</li>
+                    <li>Investment recommendations</li>
+                    <li>Quarterly reviews</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✅</div>
+                <h3 class="service-title">Farmer Verification</h3>
+                <p class="service-description">Thorough background checks and farm inspections to ensure all farmers meet our high standards.</p>
+                <ul class="service-list">
+                    <li>Background checks</li>
+                    <li>Farm audits</li>
+                    <li>Credit scoring</li>
+                    <li>Ongoing monitoring</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">Financial Education</h3>
+                <p class="service-description">Training and resources to help investors and farmers make informed financial decisions.</p>
+                <ul class="service-list">
+                    <li>Investment webinars</li>
+                    <li>Agricultural guides</li>
+                    <li>Market updates</li>
+                    <li>Best practices</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3 class="service-title">Dispute Resolution</h3>
+                <p class="service-description">Fair and transparent processes to resolve any disputes between investors and farmers.</p>
+                <ul class="service-list">
+                    <li>Mediation services</li>
+                    <li>Legal support</li>
+                    <li>Arbitration</li>
+                    <li>Insurance claims</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3 class="service-title">Customer Support</h3>
+                <p class="service-description">24/7 dedicated support team ready to assist with any questions or concerns.</p>
+                <ul class="service-list">
+                    <li>Live chat support</li>
+                    <li>Email assistance</li>
+                    <li>Phone support</li>
+                    <li>Video tutorials</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">Performance Reporting</h3>
+                <p class="service-description">Detailed reports on investment performance, returns, and portfolio growth.</p>
+                <ul class="service-list">
+                    <li>Monthly statements</li>
+                    <li>ROI tracking</li>
+                    <li>Tax documents</li>
+                    <li>Custom reports</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h1>Simple & Transparent Pricing</h1>
+                <p>No hidden fees. Only pay for the services you use.</p>
+            </div>
+
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Investor Cost</th>
+                        <th>Farmer Cost</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Platform Access</strong></td>
+                        <td>Free</td>
+                        <td>Free</td>
+                        <td>Create account and browse opportunities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Investment Fee</strong></td>
+                        <td>1-2%</td>
+                        <td>3-5%</td>
+                        <td>On each investment transaction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Return Collection</strong></td>
+                        <td>0.5%</td>
+                        <td>2%</td>
+                        <td>When funds are collected</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Premium Support</strong></td>
+                        <td>₦5,000/month</td>
+                        <td>₦10,000/month</td>
+                        <td>Priority support and advisory</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Insurance Coverage</strong></td>
+                        <td>1% of invested amount</td>
+                        <td>2% of received amount</td>
+                        <td>Risk coverage and protection</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Agricultural Investments?</h2>
+            <p>Join thousands of investors and farmers who are already growing together through Badekaka.</p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-btn-primary" onclick="alert('Redirecting to signup page...')">Get Started Now</button>
+                <button class="cta-btn cta-btn-secondary" onclick="alert('More information coming soon')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Badekaka</h3>
+                    <p>Where Farmers and Investors Grow Together</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Badekaka. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

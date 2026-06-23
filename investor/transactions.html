@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Investor Dashboard</title>
+    <link rel="stylesheet" href="style/investor-dashboard.css">
+    <link rel="stylesheet" href="style/investor-pages.css">
+</head>
+<body>
+    <div class="investor-container">
+        <!-- Sidebar Navigation -->
+        <aside class="investor-sidebar">
+            <div class="investor-profile">
+                <img src="../images/growthtrans.png" alt="Investor Profile" class="profile-image">
+                <h3 class="profile-name">John Investor</h3>
+                <p class="profile-role">Active Investor</p>
+            </div>
+
+            <nav class="investor-nav">
+                <ul class="nav-menu">
+                    <li><a href="investor-dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span></a></li>
+                    <li><a href="investments.html" class="nav-link"><span class="nav-icon">💼</span><span class="nav-label">Investments</span></a></li>
+                    <li><a href="farming.html" class="nav-link"><span class="nav-icon">🌾</span><span class="nav-label">Farming</span></a></li>
+                    <li><a href="adverts.html" class="nav-link"><span class="nav-icon">📢</span><span class="nav-label">Adverts</span></a></li>
+                    <li><a href="portfolio.html" class="nav-link"><span class="nav-icon">📈</span><span class="nav-label">Portfolio</span></a></li>
+                    <li><a href="transactions.html" class="nav-link active"><span class="nav-icon">💳</span><span class="nav-label">Transactions</span></a></li>
+                    <li><a href="update-profile.html" class="nav-link"><span class="nav-icon">👤</span><span class="nav-label">Update Profile</span></a></li>
+                    <li><a href="../index.html" class="nav-link logout"><span class="nav-icon">🚪</span><span class="nav-label">Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="investor-main">
+            <header class="investor-header">
+                <div class="header-title">
+                    <h1>Transaction History</h1>
+                    <p>View all your investment and withdrawal transactions</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary">Download Statement</button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Transaction Filters -->
+                <section class="filter-section">
+                    <div class="transaction-filters">
+                        <input type="text" class="search-box" placeholder="Search transactions...">
+                        <input type="date" class="date-input" placeholder="Start Date">
+                        <input type="date" class="date-input" placeholder="End Date">
+                        <select class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="investment">Investment</option>
+                            <option value="return">Return</option>
+                            <option value="withdrawal">Withdrawal</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Transactions Table -->
+                <section class="recent-section">
+                    <h2>All Transactions</h2>
+                    <div class="table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Balance</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-06-15</td>
+                                    <td><span class="transaction-type debit">Debit</span></td>
+                                    <td>Investment in Adekunle Farms - Rice</td>
+                                    <td class="amount">-₦500,000</td>
+                                    <td>₦4,750,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-06-10</td>
+                                    <td><span class="transaction-type credit">Credit</span></td>
+                                    <td>Return from Ejiro Farms - Cassava</td>
+                                    <td class="amount">+₦750,000</td>
+                                    <td>₦5,250,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-06-08</td>
+                                    <td><span class="transaction-type debit">Debit</span></td>
+                                    <td>Investment in Okafor Agro - Maize</td>
+                                    <td class="amount">-₦300,000</td>
+                                    <td>₦4,500,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-06-05</td>
+                                    <td><span class="transaction-type debit">Debit</span></td>
+                                    <td>Investment in Grace's Farm - Tomatoes</td>
+                                    <td class="amount">-₦400,000</td>
+                                    <td>₦4,800,000</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-06-01</td>
+                                    <td><span class="transaction-type credit">Credit</span></td>
+                                    <td>Partial return from Adekunle Farms - Rice</td>
+                                    <td class="amount">+₦400,000</td>
+                                    <td>₦5,200,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-05-28</td>
+                                    <td><span class="transaction-type debit">Debit</span></td>
+                                    <td>Withdrawal to Bank Account</td>
+                                    <td class="amount">-₦500,000</td>
+                                    <td>₦4,800,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-05-25</td>
+                                    <td><span class="transaction-type credit">Credit</span></td>
+                                    <td>Investment return - Okafor Agro</td>
+                                    <td class="amount">+₦150,000</td>
+                                    <td>₦5,300,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-05-20</td>
+                                    <td><span class="transaction-type debit">Debit</span></td>
+                                    <td>Account Maintenance Fee</td>
+                                    <td class="amount negative">-₦5,000</td>
+                                    <td>₦5,150,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/investor-dashboard.js"></script>
+</body>
+</html>

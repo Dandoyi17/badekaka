@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard - Badekaka</title>
+    <link rel="stylesheet" href="style/investor-dashboard.css">
+</head>
+<body>
+    <div class="investor-container">
+        <!-- Sidebar Navigation -->
+        <aside class="investor-sidebar">
+            <!-- Profile Section -->
+            <div class="investor-profile">
+                <img src="../images/growthtrans.png" alt="Investor Profile" class="profile-image">
+                <h3 class="profile-name">John Investor</h3>
+                <p class="profile-role">Active Investor</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="investor-nav">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="investor-dashboard.html" class="nav-link active">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="investments.html" class="nav-link">
+                            <span class="nav-icon">💼</span>
+                            <span class="nav-label">Investments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="farming.html" class="nav-link">
+                            <span class="nav-icon">🌾</span>
+                            <span class="nav-label">Farming</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adverts.html" class="nav-link">
+                            <span class="nav-icon">📢</span>
+                            <span class="nav-label">Adverts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html" class="nav-link">
+                            <span class="nav-icon">📈</span>
+                            <span class="nav-label">Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transactions.html" class="nav-link">
+                            <span class="nav-icon">💳</span>
+                            <span class="nav-label">Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="update-profile.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-label">Update Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="nav-link logout">
+                            <span class="nav-icon">🚪</span>
+                            <span class="nav-label">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="investor-main">
+            <!-- Header -->
+            <header class="investor-header">
+                <div class="header-title">
+                    <h1>Welcome to Your Investor Dashboard</h1>
+                    <p>Manage your investments and track your farming partnerships</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary">Start New Investment</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Cards -->
+                <section class="overview-section">
+                    <h2>Overview</h2>
+                    <div class="cards-grid">
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Total Invested</h3>
+                                <span class="card-icon">💰</span>
+                            </div>
+                            <p class="card-value">₦2,450,000</p>
+                            <p class="card-subtitle">Across 8 projects</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Active Investments</h3>
+                                <span class="card-icon">📊</span>
+                            </div>
+                            <p class="card-value">5</p>
+                            <p class="card-subtitle">Currently active</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Expected Returns</h3>
+                                <span class="card-icon">📈</span>
+                            </div>
+                            <p class="card-value">₦875,000</p>
+                            <p class="card-subtitle">Next harvest</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Pending Transactions</h3>
+                                <span class="card-icon">⏳</span>
+                            </div>
+                            <p class="card-value">2</p>
+                            <p class="card-subtitle">Awaiting confirmation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Investments -->
+                <section class="recent-section">
+                    <h2>Recent Investments</h2>
+                    <div class="table-container">
+                        <table class="investments-table">
+                            <thead>
+                                <tr>
+                                    <th>Investment ID</th>
+                                    <th>Crop Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Expected Return</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#INV001</td>
+                                    <td>Rice</td>
+                                    <td>₦500,000</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>₦1,500,000</td>
+                                    <td><a href="#" class="btn-small">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#INV002</td>
+                                    <td>Maize</td>
+                                    <td>₦300,000</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>₦900,000</td>
+                                    <td><a href="#" class="btn-small">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#INV003</td>
+                                    <td>Tomatoes</td>
+                                    <td>₦400,000</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>₦1,200,000</td>
+                                    <td><a href="#" class="btn-small">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#INV004</td>
+                                    <td>Cassava</td>
+                                    <td>₦250,000</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>₦750,000</td>
+                                    <td><a href="#" class="btn-small">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Quick Links -->
+                <section class="quick-links-section">
+                    <h2>Quick Actions</h2>
+                    <div class="quick-links-grid">
+                        <a href="investments.html" class="quick-link-card">
+                            <div class="quick-icon">🔍</div>
+                            <h3>View All Investments</h3>
+                            <p>Browse and manage all your investments</p>
+                        </a>
+                        <a href="farming.html" class="quick-link-card">
+                            <div class="quick-icon">🌱</div>
+                            <h3>Explore Farming Projects</h3>
+                            <p>Discover new farming opportunities</p>
+                        </a>
+                        <a href="portfolio.html" class="quick-link-card">
+                            <div class="quick-icon">💼</div>
+                            <h3>View Portfolio</h3>
+                            <p>Track your investment portfolio performance</p>
+                        </a>
+                        <a href="transactions.html" class="quick-link-card">
+                            <div class="quick-icon">📋</div>
+                            <h3>Transaction History</h3>
+                            <p>View all your transaction records</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/investor-dashboard.js"></script>
+</body>
+</html>

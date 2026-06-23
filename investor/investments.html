@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments - Investor Dashboard</title>
+    <link rel="stylesheet" href="style/investor-dashboard.css">
+    <link rel="stylesheet" href="style/investor-pages.css">
+</head>
+<body>
+    <div class="investor-container">
+        <!-- Sidebar Navigation -->
+        <aside class="investor-sidebar">
+            <div class="investor-profile">
+                <img src="../images/growthtrans.png" alt="Investor Profile" class="profile-image">
+                <h3 class="profile-name">John Investor</h3>
+                <p class="profile-role">Active Investor</p>
+            </div>
+
+            <nav class="investor-nav">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="investor-dashboard.html" class="nav-link">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="investments.html" class="nav-link active">
+                            <span class="nav-icon">💼</span>
+                            <span class="nav-label">Investments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="farming.html" class="nav-link">
+                            <span class="nav-icon">🌾</span>
+                            <span class="nav-label">Farming</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adverts.html" class="nav-link">
+                            <span class="nav-icon">📢</span>
+                            <span class="nav-label">Adverts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html" class="nav-link">
+                            <span class="nav-icon">📈</span>
+                            <span class="nav-label">Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transactions.html" class="nav-link">
+                            <span class="nav-icon">💳</span>
+                            <span class="nav-label">Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="update-profile.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-label">Update Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="nav-link logout">
+                            <span class="nav-icon">🚪</span>
+                            <span class="nav-label">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="investor-main">
+            <header class="investor-header">
+                <div class="header-title">
+                    <h1>My Investments</h1>
+                    <p>View and manage all your active and completed investments</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary">New Investment</button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Filter Section -->
+                <section class="filter-section">
+                    <div class="filter-controls">
+                        <input type="text" class="search-box" placeholder="Search investments...">
+                        <select class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">All Crops</option>
+                            <option value="rice">Rice</option>
+                            <option value="maize">Maize</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="cassava">Cassava</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Investments List -->
+                <section class="investments-list-section">
+                    <h2>All Investments</h2>
+                    <div class="investments-cards">
+                        <div class="investment-card">
+                            <div class="card-header-section">
+                                <h3>Rice Farming Project</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-details">
+                                <div class="detail-row">
+                                    <span class="label">Investment ID:</span>
+                                    <span class="value">#INV001</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Amount Invested:</span>
+                                    <span class="value">₦500,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expected Return:</span>
+                                    <span class="value">₦1,500,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">6 months</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Farmer:</span>
+                                    <span class="value">Adekunle Farms</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <p class="progress-text">65% Complete</p>
+                            <div class="card-actions">
+                                <button class="btn-small">View Details</button>
+                                <button class="btn-small secondary">Contact Farmer</button>
+                            </div>
+                        </div>
+
+                        <div class="investment-card">
+                            <div class="card-header-section">
+                                <h3>Maize Cultivation</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-details">
+                                <div class="detail-row">
+                                    <span class="label">Investment ID:</span>
+                                    <span class="value">#INV002</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Amount Invested:</span>
+                                    <span class="value">₦300,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expected Return:</span>
+                                    <span class="value">₦900,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">4 months</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Farmer:</span>
+                                    <span class="value">Okafor Agricultural Co.</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <p class="progress-text">40% Complete</p>
+                            <div class="card-actions">
+                                <button class="btn-small">View Details</button>
+                                <button class="btn-small secondary">Contact Farmer</button>
+                            </div>
+                        </div>
+
+                        <div class="investment-card">
+                            <div class="card-header-section">
+                                <h3>Tomato Production</h3>
+                                <span class="status pending">Pending</span>
+                            </div>
+                            <div class="card-details">
+                                <div class="detail-row">
+                                    <span class="label">Investment ID:</span>
+                                    <span class="value">#INV003</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Amount Invested:</span>
+                                    <span class="value">₦400,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expected Return:</span>
+                                    <span class="value">₦1,200,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">5 months</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Farmer:</span>
+                                    <span class="value">Grace's Farm</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 10%;"></div>
+                            </div>
+                            <p class="progress-text">10% Complete - Awaiting Farmer Confirmation</p>
+                            <div class="card-actions">
+                                <button class="btn-small">View Details</button>
+                                <button class="btn-small secondary">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="investment-card">
+                            <div class="card-header-section">
+                                <h3>Cassava Processing</h3>
+                                <span class="status completed">Completed</span>
+                            </div>
+                            <div class="card-details">
+                                <div class="detail-row">
+                                    <span class="label">Investment ID:</span>
+                                    <span class="value">#INV004</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Amount Invested:</span>
+                                    <span class="value">₦250,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Actual Return:</span>
+                                    <span class="value">₦750,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">6 months</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Farmer:</span>
+                                    <span class="value">Ejiro Farms Ltd</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill completed" style="width: 100%;"></div>
+                            </div>
+                            <p class="progress-text">100% Complete - Funds Received</p>
+                            <div class="card-actions">
+                                <button class="btn-small">View Details</button>
+                                <button class="btn-small secondary">Invest Again</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/investor-dashboard.js"></script>
+</body>
+</html>

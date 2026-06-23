@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Investor Dashboard</title>
+    <link rel="stylesheet" href="style/investor-dashboard.css">
+    <link rel="stylesheet" href="style/investor-pages.css">
+</head>
+<body>
+    <div class="investor-container">
+        <!-- Sidebar Navigation -->
+        <aside class="investor-sidebar">
+            <div class="investor-profile">
+                <img src="../images/growthtrans.png" alt="Investor Profile" class="profile-image">
+                <h3 class="profile-name">John Investor</h3>
+                <p class="profile-role">Active Investor</p>
+            </div>
+
+            <nav class="investor-nav">
+                <ul class="nav-menu">
+                    <li><a href="investor-dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span></a></li>
+                    <li><a href="investments.html" class="nav-link"><span class="nav-icon">💼</span><span class="nav-label">Investments</span></a></li>
+                    <li><a href="farming.html" class="nav-link"><span class="nav-icon">🌾</span><span class="nav-label">Farming</span></a></li>
+                    <li><a href="adverts.html" class="nav-link"><span class="nav-icon">📢</span><span class="nav-label">Adverts</span></a></li>
+                    <li><a href="portfolio.html" class="nav-link active"><span class="nav-icon">📈</span><span class="nav-label">Portfolio</span></a></li>
+                    <li><a href="transactions.html" class="nav-link"><span class="nav-icon">💳</span><span class="nav-label">Transactions</span></a></li>
+                    <li><a href="update-profile.html" class="nav-link"><span class="nav-icon">👤</span><span class="nav-label">Update Profile</span></a></li>
+                    <li><a href="../index.html" class="nav-link logout"><span class="nav-icon">🚪</span><span class="nav-label">Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="investor-main">
+            <header class="investor-header">
+                <div class="header-title">
+                    <h1>Investment Portfolio</h1>
+                    <p>Track your investment performance and diversification</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary">Export Report</button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Portfolio Summary -->
+                <section class="portfolio-summary">
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon">💰</div>
+                        <div class="portfolio-label">Total Portfolio Value</div>
+                        <div class="portfolio-value">₦5,250,000</div>
+                        <div class="portfolio-change positive">↑ +15% this month</div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon">📊</div>
+                        <div class="portfolio-label">Total Invested</div>
+                        <div class="portfolio-value">₦2,450,000</div>
+                        <div class="portfolio-change positive">↑ +5 projects</div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon">📈</div>
+                        <div class="portfolio-label">Total Gains</div>
+                        <div class="portfolio-value">₦2,800,000</div>
+                        <div class="portfolio-change positive">↑ +114% returns</div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon">⏳</div>
+                        <div class="portfolio-label">Pending Returns</div>
+                        <div class="portfolio-value">₦875,000</div>
+                        <div class="portfolio-change positive">↑ Next harvest</div>
+                    </div>
+                </section>
+
+                <!-- Diversification -->
+                <section class="overview-section">
+                    <h2>Investment Diversification</h2>
+                    <div class="cards-grid">
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Rice Investments</h3>
+                                <span class="card-icon">🌾</span>
+                            </div>
+                            <p class="card-value">₦850,000</p>
+                            <p class="card-subtitle">34% of portfolio</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Maize Investments</h3>
+                                <span class="card-icon">🌽</span>
+                            </div>
+                            <p class="card-value">₦620,000</p>
+                            <p class="card-subtitle">25% of portfolio</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Tomato Investments</h3>
+                                <span class="card-icon">🍅</span>
+                            </div>
+                            <p class="card-value">₦560,000</p>
+                            <p class="card-subtitle">23% of portfolio</p>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>Cassava Investments</h3>
+                                <span class="card-icon">🥔</span>
+                            </div>
+                            <p class="card-value">₦420,000</p>
+                            <p class="card-subtitle">18% of portfolio</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Trends -->
+                <section class="recent-section">
+                    <h2>Investment Performance</h2>
+                    <div class="table-container">
+                        <table class="investments-table">
+                            <thead>
+                                <tr>
+                                    <th>Investment</th>
+                                    <th>Amount Invested</th>
+                                    <th>Current Value</th>
+                                    <th>Return</th>
+                                    <th>ROI %</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Adekunle Farms - Rice</td>
+                                    <td>₦500,000</td>
+                                    <td>₦1,500,000</td>
+                                    <td>₦1,000,000</td>
+                                    <td><span style="color: #4caf50;">+200%</span></td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Okafor Agro - Maize</td>
+                                    <td>₦300,000</td>
+                                    <td>₦855,000</td>
+                                    <td>₦555,000</td>
+                                    <td><span style="color: #4caf50;">+185%</span></td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Grace's Farm - Tomatoes</td>
+                                    <td>₦400,000</td>
+                                    <td>₦400,000</td>
+                                    <td>₦0</td>
+                                    <td><span style="color: #1565c0;">0%</span></td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ejiro Farms - Cassava (Completed)</td>
+                                    <td>₦250,000</td>
+                                    <td>₦750,000</td>
+                                    <td>₦500,000</td>
+                                    <td><span style="color: #4caf50;">+200%</span></td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/investor-dashboard.js"></script>
+</body>
+</html>

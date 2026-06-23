@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile - Investor Dashboard</title>
+    <link rel="stylesheet" href="style/investor-dashboard.css">
+    <link rel="stylesheet" href="style/investor-pages.css">
+</head>
+<body>
+    <div class="investor-container">
+        <!-- Sidebar Navigation -->
+        <aside class="investor-sidebar">
+            <div class="investor-profile">
+                <img src="../images/growthtrans.png" alt="Investor Profile" class="profile-image">
+                <h3 class="profile-name">John Investor</h3>
+                <p class="profile-role">Active Investor</p>
+            </div>
+
+            <nav class="investor-nav">
+                <ul class="nav-menu">
+                    <li><a href="investor-dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span></a></li>
+                    <li><a href="investments.html" class="nav-link"><span class="nav-icon">💼</span><span class="nav-label">Investments</span></a></li>
+                    <li><a href="farming.html" class="nav-link"><span class="nav-icon">🌾</span><span class="nav-label">Farming</span></a></li>
+                    <li><a href="adverts.html" class="nav-link"><span class="nav-icon">📢</span><span class="nav-label">Adverts</span></a></li>
+                    <li><a href="portfolio.html" class="nav-link"><span class="nav-icon">📈</span><span class="nav-label">Portfolio</span></a></li>
+                    <li><a href="transactions.html" class="nav-link"><span class="nav-icon">💳</span><span class="nav-label">Transactions</span></a></li>
+                    <li><a href="update-profile.html" class="nav-link active"><span class="nav-icon">👤</span><span class="nav-label">Update Profile</span></a></li>
+                    <li><a href="../index.html" class="nav-link logout"><span class="nav-icon">🚪</span><span class="nav-label">Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="investor-main">
+            <header class="investor-header">
+                <div class="header-title">
+                    <h1>Update Profile</h1>
+                    <p>Manage your account information and preferences</p>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <section class="profile-form">
+                    <form id="profileForm">
+                        <!-- Personal Information -->
+                        <fieldset class="profile-fieldset">
+                            <legend class="profile-legend">Personal Information</legend>
+
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" value="John" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" value="Investor" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" value="john@investor.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" value="+234 801 234 5678" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male" selected>Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <!-- Address Information -->
+                        <fieldset class="profile-fieldset">
+                            <legend class="profile-legend">Address</legend>
+
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" name="address" value="123 Main Street, Ikoyi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" value="Lagos" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" value="Lagos State" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="zipcode">Zip Code</label>
+                                <input type="text" id="zipcode" name="zipcode" value="101001" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country" value="Nigeria" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- Bank Information -->
+                        <fieldset class="profile-fieldset">
+                            <legend class="profile-legend">Bank Information</legend>
+
+                            <div class="form-group">
+                                <label for="bankName">Bank Name</label>
+                                <input type="text" id="bankName" name="bankName" value="Access Bank" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="accountName">Account Name</label>
+                                <input type="text" id="accountName" name="accountName" value="John Investor" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" name="accountNumber" value="0123456789" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bankCode">Bank Code</label>
+                                <input type="text" id="bankCode" name="bankCode" value="044" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- Investment Preferences -->
+                        <fieldset class="profile-fieldset">
+                            <legend class="profile-legend">Investment Preferences</legend>
+
+                            <div class="form-group">
+                                <label for="investmentType">Preferred Investment Type</label>
+                                <select id="investmentType" name="investmentType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="shortterm" selected>Short Term (3-4 months)</option>
+                                    <option value="mediumterm">Medium Term (6-8 months)</option>
+                                    <option value="longterm">Long Term (12+ months)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="riskTolerance">Risk Tolerance</label>
+                                <select id="riskTolerance" name="riskTolerance" required>
+                                    <option value="">Select Level</option>
+                                    <option value="low">Low (Conservative)</option>
+                                    <option value="medium" selected>Medium (Balanced)</option>
+                                    <option value="high">High (Aggressive)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bio">Bio / About You</label>
+                                <textarea id="bio" name="bio" placeholder="Tell us about yourself and your investment goals...">Active investor interested in sustainable agriculture and community development.</textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Save Changes</button>
+                            <button type="button" class="btn-cancel" onclick="history.back()">Cancel</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Danger Zone Section -->
+                <section class="danger-zone-section">
+                    <h2 class="danger-zone-title">Danger Zone</h2>
+                    
+                    <div class="danger-item">
+                        <h3 class="danger-item-title">⚠️ Change Password</h3>
+                        <p class="danger-item-description">For your security, regularly update your password to keep your account protected.</p>
+                        <button type="button" class="btn-danger" data-modal="changePasswordModal">Change Password</button>
+                    </div>
+
+                    <div class="danger-item">
+                        <h3 class="danger-item-title">⚠️ Deactivate Account</h3>
+                        <p class="danger-item-description">Permanently deactivate your account. This action cannot be undone. All your investments will be frozen.</p>
+                        <button type="button" class="btn-danger" data-modal="deactivateModal">Deactivate Account</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🔐 Change Password</h2>
+                <button type="button" class="modal-close">&times;</button>
+            </div>
+            <form id="changePasswordForm">
+                <div class="modal-body">
+                    <p>Enter your current password and create a new secure password.</p>
+                    
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter your current password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password (min 8 characters)" minlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" minlength="8" required>
+                    </div>
+
+                    <div class="modal-warning">
+                        <strong>⚠️ Important:</strong> Use a strong password with uppercase, lowercase, numbers, and special characters.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="Modal.closeModal('changePasswordModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deactivate Account Modal -->
+    <div id="deactivateModal" class="modal danger">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🚨 Deactivate Account</h2>
+                <button type="button" class="modal-close">&times;</button>
+            </div>
+            <form id="deactivateAccountForm">
+                <div class="modal-body">
+                    <div class="modal-warning">
+                        <strong>⚠️ WARNING:</strong> This action is permanent and cannot be undone. All your investments will be frozen immediately.
+                    </div>
+
+                    <p style="color: var(--text-dark); font-weight: 600; margin-top: 20px;">What happens when you deactivate:</p>
+                    <ul style="color: var(--text-light); font-size: 14px; line-height: 1.8;">
+                        <li>✓ All active investments will be frozen</li>
+                        <li>✓ Your account will be marked as inactive</li>
+                        <li>✓ You will no longer receive updates</li>
+                        <li>✓ Your data will be retained for 12 months</li>
+                        <li>✓ After 12 months, all data will be permanently deleted</li>
+                    </ul>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="deactivateReason">Reason for Deactivation (Optional)</label>
+                        <textarea id="deactivateReason" name="deactivateReason" placeholder="Please tell us why you're deactivating your account..." style="min-height: 100px;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deactivateConfirm" style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" id="deactivateConfirm" name="deactivateConfirm" required style="width: auto; margin-right: 10px; cursor: pointer;">
+                            <span>I understand this action is permanent and cannot be undone</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="Modal.closeModal('deactivateModal')">Keep Account</button>
+                    <button type="submit" class="btn btn-danger">Deactivate Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/investor-dashboard.js"></script>
+    <script src="js/update-profile.js"></script>
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Profile updated successfully!');
+        });
+    </script>
+</body>
+</html>
